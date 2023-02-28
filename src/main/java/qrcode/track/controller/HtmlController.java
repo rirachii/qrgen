@@ -40,7 +40,7 @@ public class HtmlController {
 //      Call db with id to get long url, ? create a method in service to do this
         String longUrl;
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("<html>\n<header>\n");
+        stringBuilder.append("<html>\n<head>\n");
         stringBuilder.append("<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-4PKE5HDNLG\"></script>\n");
         stringBuilder.append("<script>\nwindow.dataLayer = window.dataLayer || []\n");
         stringBuilder.append("function gtag(){ dataLayer.push(arguments); }\n");
@@ -49,7 +49,7 @@ public class HtmlController {
         stringBuilder.append("</script>\n");
         stringBuilder.append("<meta http-equiv=\"refresh\" content=\"1; url='");
         stringBuilder.append("https://www.mweng.me"); // pass in longUrl here
-        stringBuilder.append("'\"/>\n</header>\n</html>\n");
+        stringBuilder.append("'\"/>\n</head>\n</html>\n");
         return stringBuilder.toString();
     }
 
@@ -60,14 +60,14 @@ public class HtmlController {
     @GetMapping({"/test"})
     public String test() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("<html>\n<header>\n");
+        stringBuilder.append("<html>\n<head>\n");
         stringBuilder.append("<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-4PKE5HDNLG\"></script>\n");
         stringBuilder.append("<script>\nwindow.dataLayer = window.dataLayer || []\n");
         stringBuilder.append("function gtag(){ dataLayer.push(arguments); }\n");
         stringBuilder.append("gtag('js', new Date());\n");
         stringBuilder.append("gtag('config', 'G-4PKE5HDNLG')\n");
         stringBuilder.append("</script>\n");
-        stringBuilder.append("</header>\n</html>\n");
+        stringBuilder.append("</head>\n</html>\n");
         return stringBuilder.toString();
     }
 }
