@@ -52,4 +52,9 @@ public class HtmlController {
         stringBuilder.append("'\"/>\n</header>\n</html>\n");
         return stringBuilder.toString();
     }
+
+    @GetMapping({"/home", "/status"})
+    public String getStatus() {
+        return "Application is up and running";
+    }
 }
