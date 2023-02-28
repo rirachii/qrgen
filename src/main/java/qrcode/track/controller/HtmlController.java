@@ -57,4 +57,17 @@ public class HtmlController {
     public String getStatus() {
         return "Application is up and running";
     }
+    @GetMapping({"/test"})
+    public String test() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("<html>\n<header>\n");
+        stringBuilder.append("<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-4PKE5HDNLG\"></script>\n");
+        stringBuilder.append("<script>\nwindow.dataLayer = window.dataLayer || []\n");
+        stringBuilder.append("function gtag(){ dataLayer.push(arguments); }\n");
+        stringBuilder.append("gtag('js', new Date());\n");
+        stringBuilder.append("gtag('config', 'G-4PKE5HDNLG')\n");
+        stringBuilder.append("</script>\n");
+        stringBuilder.append("</header>\n</html>\n");
+        return stringBuilder.toString();
+    }
 }
